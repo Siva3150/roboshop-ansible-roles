@@ -12,11 +12,13 @@
   ansible.builtin.shell:  mongo --host {{MONGODB_HOST}} --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
   register: products_count
   when: component == "catalogue"
+  ignore_errors: true
 
 - name: "get the user entries count"
   ansible.builtin.shell:  mongo --host {{MONGODB_HOST}} --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
   register: users_count
   when: component == "user"
+  ignore_errors: true
 
 # - name: print the count
 #   ansible.builtin.debug:
