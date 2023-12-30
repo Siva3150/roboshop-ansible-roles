@@ -1,1 +1,4 @@
 MONGODB_HOST: mongodb.sivadevops.online # submit your host
+REDIS_HOST: redis.sivadevops.online
+MYSQL_HOST: mysql.sivadevops.online
+
